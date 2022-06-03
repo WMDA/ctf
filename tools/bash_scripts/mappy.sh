@@ -24,6 +24,14 @@ do
     esac
 done
 
+if [ -z $ip ];
+then
+	echo -e "\n\e[31mplease provide ip address\e[0m"
+	exit 1
+else
+	echo -e "Scanning" ${ip}
+fi
+
 nmap -sC -sV -oN enum/nmap/initial -vv ${ip}
 
 echo -e "\n\e[33mFinished with first scan. Would you like me to continue with an all port scan? (y/n)\e[0m"
@@ -51,7 +59,7 @@ else
 	echo -e "\n\e[31mCancelling aggressive scan\e[0m"
 	fi 
 
-echo -e "\e[33mWould you like me to enumerate top 20 UDP ports? (y/n)\e[0m"
+echo -e "\e[33m\nWould you like me to enumerate top 20 UDP ports? (y/n)\e[0m"
 read udp_response
 
 if [[ $udp_response == 'y' ]];
