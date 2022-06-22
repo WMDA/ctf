@@ -2,9 +2,11 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"io"
 	"log"
 	"net"
+	"os"
 	"os/exec"
 )
 
@@ -25,19 +27,25 @@ func flags() string {
 	flag.StringVar(&port, "p", "", "Port to listen on. Use -h or --help for more")
 	flag.Parse()
 
+	if port == "" {
+		fmt.Println("No port provided. Please provide a port to listen on. Use --help or -h for more info")
+		os.Exit(1)
+	}
+
 	return port
 
 }
 
 func main() {
-	//Bind to tcp port 20080
-	port_to_listen := flags()
-	listener, err := net.Listen("tcp", ":", port_to_listen)
+	//Bind to a given tcp port
+	port_to_listen := fmt.Sprintf(":%s", flags())
+
+	listener, err := net.Listen("tcp", port_to_listen)
 	if err != nil {
 		log.Fatalln("Unable to Bind to port")
 	}
 
-	log.Println("Listening on 0.0.0.0:20080")
+	log.Printf("Listening on 0.0.0.0%s", port_to_listen)
 
 	for {
 		// Wait for connection
