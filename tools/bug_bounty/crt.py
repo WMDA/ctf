@@ -72,7 +72,7 @@ def parsing(json_file:dict) -> dict:
         for sub_domain in name_split:
             if '*' in sub_domain:
                 potential_sub_domains.append(sub_domain)
-        else:
+
             if '.' in sub_domain and '*' not in sub_domain:
                 sub_domains.append(sub_domain)
 
