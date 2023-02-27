@@ -1,0 +1,26 @@
+[global_config]
+  window_state = maximise
+  suppress_multiple_term_dialog = True
+[keybindings]
+  split_horiz = <Primary>Down
+  split_vert = <Primary>Right
+[profiles]
+  [[default]]
+    background_color = "#241f31"
+    background_darkness = 0.52
+    background_type = image
+    background_image = /root/Downloads/3358143(1).jpg
+    foreground_color = "#ff02e4"
+    show_titlebar = False
+    scrollback_infinite = True
+    palette = "#2e3436:#ff008a:#fb29ff:#b04aa0:#ff9cf0:#75507b:#06989a:#dc8add:#555753:#f500fa:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#dc8add"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]

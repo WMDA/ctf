@@ -1,0 +1,26 @@
+export GOROOT=/usr/lib/go
+export GOPATH=/root/go
+export PATH=/bin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+
+alias python=python3
+alias pip=pip3
+alias thm='openvpn /root/vpn/thm/WMDA.ovpn'
+alias up='python -m http.server'
+alias token='cat /opt/t.txt'
+alias cat='batcat --paging=never'
+alias weapy='python /root/tools/weapy/weapy.py'
+alias lab_htb='openvpn /root/vpn/htb/lab_WMDA.ovpn'
+alias wptoken="cat /opt/wptoken"
+alias gitdumper="/opt/GitTools/Dumper/gitdumper.sh"
+alias gitextractor="/opt/GitTools/Extractor/extractor.sh"
+alias mappy="/root/tools/ctf/tools/bash_scripts/mappy.sh"
+alias tplmap='python3.9 /opt/tplmap/tplmap.py'
+alias ls='exa -l'
+alias htb="openvpn /root/vpn/htb/lab_WMDA.ovpn"
+alias starting_point='openvpn /root/vpn/htb/starting_point_WMDA.ovpn'
+alias tools="cd /root/tools/linux_privesc && up && cd -"
+alias tmux_help='cat /opt/tmux_help'
+alias hackthebox='/root/hacking/startup_scripts/hackthebox'
+alias tryhackme='/root/hacking/startup_scripts/tryhackme'
+alias vi=vim
+alias web='/root/hacking/startup_scripts/web_enum'

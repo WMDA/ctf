@@ -1,0 +1,8 @@
+#! /bin/bash
+
+tmux new-session -d -s htb -n vpn openvpn /root/vpn/htb/lab_WMDA.ovpn
+tmux new-window -n enumerate 
+tmux new-window -n shells
+tmux select-window -t enumerate
+tmux split-window -h
+tmux attach-session
